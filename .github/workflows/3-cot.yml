@@ -1,0 +1,30 @@
+name: Step 3, Chain-of-Thought
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Great PR! Test your CoT prompt and merge when ready.'
+            })
+
+      - name: Update to step 4
+        uses: skills/action-update-step@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 3
+          to_step: 4
