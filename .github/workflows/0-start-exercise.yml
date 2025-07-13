@@ -18,7 +18,7 @@ jobs:
     if: |
       !github.event.repository.is_template
     name: Start Exercise
-    uses: anton-roos/ai-skills/.github/workflows/start-exercise.yml@main
+    uses: anton-roos/ai-skills/actions/start-exercise.yml@main
     with:
       exercise-title: "Business Analysis with MCP and AI"
       intro-message: 🎯 **Welcome to Hollard's Business Analysis Training!**
