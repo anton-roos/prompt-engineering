@@ -1,11 +1,14 @@
 # Initialize Prompts Document
 
-# This workflow creates a template prompts.md for Business Analysts
+# This workflow creates a template prompts.md and opens a guidance issue
 name: Initialize Prompts Document
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 permissions:
   contents: write
+  issues: write
 
 jobs:
   create_template:
@@ -16,7 +19,17 @@ jobs:
         with:
           persist-credentials: true
 
+      - name: Check for existing prompts.md
+        id: check_file
+        run: |
+          if [ -f prompts.md ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Create prompts.md template
+        if: steps.check_file.outputs.exists == 'false'
         run: |
           cat << 'EOF' > prompts.md
           # My Prompts
@@ -32,9 +45,29 @@ jobs:
           EOF
 
       - name: Commit and Push
+        if: steps.check_file.outputs.exists == 'false'
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add prompts.md
           git commit -m "Initialize prompts document template" || echo "No changes to commit"
           git push
+
+      - name: Open guidance issue
+        if: steps.check_file.outputs.exists == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Welcome to Prompt Engineering Course',
+              body: `Hello Business Analyst! Your prompts.md file has been created automatically.
+              
+              Next steps:
+              1. Edit **prompts.md**: fill in your Zero-Shot, Few-Shot, and Chain-of-Thought sections.
+              2. Commit your changes on a new branch and open a Pull Request to **main**.
+              3. The Validate Prompts workflow will run and leave feedback in your PR.
+              
+              Happy prompting! 🎉`
+            });
