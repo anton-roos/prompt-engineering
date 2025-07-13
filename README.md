@@ -33,14 +33,14 @@ Zero-shot prompting means giving the AI a task without examples—it relies on t
 
 1. Create a new file called `prompts.md`.
 2. Add the following content:
+```text
+# My Prompts
 
-    # My Prompts
+## Zero-Shot Prompt
+Prompt: "Explain quantum computing in simple terms."
 
-    ## Zero-Shot Prompt
-    Prompt: "Explain quantum computing in simple terms."
-    
-    Expected Output: [Paste the AI's response here after testing]
-
+Expected Output: [Paste the AI's response here after testing]
+```
 3. Test the prompt in your AI tool (e.g., copy-paste into Grok) and paste the output.
 4. Commit the file directly to the `main` branch.
 
@@ -60,15 +60,19 @@ Few-shot prompting provides 1-3 examples in the prompt to guide the AI's respons
 ### :keyboard: Activity: Edit the file and create a branch
 
 1. Create a new branch named `few-shot`.
-2. Edit `prompts.md` to add a new section:
+2. Edit `prompts.yml` to add a new section:
+```yml
+## Few-Shot Prompt
 
-    ## Few-Shot Prompt
-    Prompt: "Example 1: Explain gravity simply: Gravity is the force that pulls objects toward each other.
-    Example 2: Explain electricity simply: Electricity is the flow of electric charge.
-    Explain quantum computing simply:"
-    
-    Expected Output: [Paste the AI's response here after testing]
+Prompt:
 
+Example 1: Explain gravity simply: Gravity is the force that pulls objects toward each other.
+
+Example 2: Explain electricity simply: Electricity is the flow of electric charge.
+
+Explain quantum computing simply:"
+Expected Output: [Paste the AI's response here after testing]
+```
 3. Test the prompt and paste the output.
 4. Commit to the `few-shot` branch.
 
