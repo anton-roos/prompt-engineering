@@ -1,0 +1,37 @@
+# Validate Prompt Sections
+
+# Ensures Business Analysts include all key sections in prompts.md
+name: Validate Prompts
+on:
+  pull_request:
+    paths:
+      - 'prompts.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check required sections
+        run: |
+          missing=0
+          grep -q '## Zero-Shot Prompt' prompts.md || { echo '- Zero-Shot Prompt missing'; missing=1; }
+          grep -q '## Few-Shot Prompt' prompts.md || { echo '- Few-Shot Prompt missing'; missing=1; }
+          grep -q '## Chain-of-Thought Prompt' prompts.md || { echo '- Chain-of-Thought Prompt missing'; missing=1; }
+          if [ "$missing" -ne 0 ]; then
+            echo "Some sections are missing. Please add them." >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+      - name: Add approval comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'All required prompt sections are present. Good job! ✅'
+            })

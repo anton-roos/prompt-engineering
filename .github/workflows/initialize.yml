@@ -1,0 +1,36 @@
+# Initialize Prompts Document
+
+# This workflow creates a template prompts.md for Business Analysts
+name: Initialize Prompts Document
+on:
+  workflow_dispatch:
+
+jobs:
+  create_template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create prompts.md template
+        run: |
+          cat << 'EOF' > prompts.md
+          # My Prompts
+
+          ## Zero-Shot Prompt
+          *Describe your instruction in one concise step.*
+
+          ## Few-Shot Prompt
+          *Provide examples with input and expected output.*
+
+          ## Chain-of-Thought Prompt
+          *Outline your reasoning steps clearly.*
+          EOF
+
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add prompts.md
+          git commit -m "Initialize prompts document template" || echo "No changes to commit"
+          git push
