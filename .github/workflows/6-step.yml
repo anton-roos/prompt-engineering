@@ -106,13 +106,6 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: ${{ env.STEP_7_FILE }}
 
-      - name: Create comment - watching for progress
-        uses: GrantBirki/comment@v2.1.1
-        with:
-          repository: ${{ env.ISSUE_REPOSITORY }}
-          issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ai-skills/templates/watching-for-progress.md
-
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"
