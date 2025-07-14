@@ -1,27 +1,55 @@
-## Step 2: (replace-me: STEP-NAME)
+## Step 2: Mastering Zero-Shot Prompting
 
-(replace-me: OPTIONAL Brief story or scenario to introduce the step)
+Great job setting up your workspace! Now you'll learn to write effective zero-shot prompts - direct instructions that get AI to perform tasks without examples.
 
-### 📖 Theory: (replace-me: Theory title)
+### 📖 Theory: Zero-Shot Prompting Fundamentals
 
-<!-- GitHub-styled notifications can be used outside of ordered lists. Available options are: NOTE, IMPORTANT, WARNING, TIP, CAUTION -->
-<!--
 > [!NOTE]
-> (Important note or additional information relevant to this section)
- -->
+> Zero-shot prompting means giving AI a task without providing examples. It relies on clear, specific instructions and the AI's pre-trained knowledge to generate appropriate responses.
 
-(replace-me: Optional theory or background information relevant to this step)
+**Key Elements of Effective Zero-Shot Prompts:**
 
-### ⌨️ Activity: (replace-me: Activity title)
+- **Clear Objective**: Exactly what you want the AI to do
+- **Context**: Background information the AI needs
+- **Format Specification**: How you want the output structured
+- **Constraints**: Any limitations or requirements
+- **Tone/Style**: The voice or approach you want
 
-1. (replace-me: First instruction)
-1. (replace-me: Second instruction)
-1. (replace-me: Additional instructions as needed)
+### ⌨️ Activity: Create Professional Zero-Shot Prompts
 
-<details>
-<summary>Having trouble? 🤷</summary><br/>
+1. **Open your `my-prompts.md` file** and add a new section for zero-shot practice
 
-- (replace-me: Troubleshooting tip or hint)
-- (replace-me: Additional troubleshooting tips as needed)
+2. **Add these zero-shot prompt templates**:
+   
+   ```markdown
+   ## Zero-Shot Prompt Practice
+   
+   ### Email Writing Prompt
+   **Prompt:** Write a professional email to stakeholders explaining a 2-week delay in the WhatsApp integration project. Include an apology, brief explanation of technical challenges, revised timeline, and next steps. Keep the tone professional but reassuring.
+   
+   **AI Response:**
+   [Test this prompt and paste the response here]
+   
+   ### Meeting Summary Prompt  
+   **Prompt:** Create a concise meeting summary with the following structure: Key Decisions, Action Items (with owners and deadlines), and Next Meeting Date. Write it for a project status meeting about implementing WhatsApp customer service capabilities.
+   
+   **AI Response:**
+   [Test this prompt and paste the response here]
+   
+   ### Technical Documentation Prompt
+   **Prompt:** Write a brief technical requirements document for integrating WhatsApp Business API into an existing customer service system. Include sections for: Overview, Technical Requirements, Integration Points, and Success Criteria. Use bullet points and keep it under 300 words.
+   
+   **AI Response:**
+   [Test this prompt and paste the response here]
+   ```
 
-</details>
+3. **Test each prompt** with GitHub Copilot, M365 Copilot, or your preferred AI tool
+
+4. **Analyze the results** - Notice how specific instructions improve response quality
+
+5. **Commit your work**:
+   ```bash
+   git add .
+   git commit -m "Added zero-shot prompting practice"
+   git push origin main
+   ```
