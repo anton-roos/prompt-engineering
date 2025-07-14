@@ -70,8 +70,8 @@ touch my-prompts.md
    git push origin main
    ```
    
-   > [!NOTE]
-   > In professional environments, it's recommended to create feature branches and use pull requests instead of pushing directly to the main branch. However, for this learning exercise, pushing directly to main is perfectly fine!
+> [!NOTE]
+> In professional environments, it's recommended to create feature branches and use pull requests instead of pushing directly to the main branch. However, for this learning exercise, pushing directly to main is perfectly fine!
    
    **What these commands do:**
    - `git add .` - Stages all your new files for commit
