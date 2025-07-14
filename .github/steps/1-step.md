@@ -23,9 +23,12 @@ In this step, you'll learn to set up a codespace to start crafting and testing e
 
 2. Right click anywhere so that the following popup will open in your codespace:
 
+   ![Paste text popup](https://raw.githubusercontent.com/anton-roos/ai-skills/refs/heads/main/images/paste-text-popup.png)
+click Allow
+
 3. **Create a new prompt document**:
    - Ensure your terminal is open. If terminal is not open press `CTRL + ~`
-   - Copy the following into the terminal`
+   - Copy the following into the terminal
    ```bash
    touch my-prompts.md
    ```
