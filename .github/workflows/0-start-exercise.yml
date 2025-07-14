@@ -77,8 +77,8 @@ jobs:
         env:
           README_CONTENT: ${{ steps.update-readme.outputs.updated-text }}
 
-      - name: Disable current workflow and enable next one
+      - name: Enable Step 1 workflow
         run: |
-          gh workflow enable "Step 1"
+          gh workflow enable "1-step.yml"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
