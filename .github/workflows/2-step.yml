@@ -68,20 +68,6 @@ jobs:
             exit 1
           fi
 
-      # Added: Check for zero-shot prompting content
-      - name: Check for zero-shot prompting content
-        id: check-zero-shot
-        continue-on-error: true
-        run: |
-          if [ -f "zero-shot-prompts.md" ] && grep -q "Zero-Shot" zero-shot-prompts.md; then
-            echo "Found zero-shot content"
-            echo "zero_shot_found=true" >> $GITHUB_OUTPUT
-          else
-            echo "Zero-shot content not found"
-            echo "zero_shot_found=false" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
         with:

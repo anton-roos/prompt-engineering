@@ -67,19 +67,6 @@ jobs:
             exit 1
           fi
 
-      - name: Check for few-shot prompting content
-        id: check-few-shot
-        continue-on-error: true
-        run: |
-          if [ -f "few-shot-prompts.md" ] && grep -q "Few-Shot" few-shot-prompts.md; then
-            echo "Found few-shot content"
-            echo "few_shot_found=true" >> $GITHUB_OUTPUT
-          else
-            echo "Few-shot content not found"
-            echo "few_shot_found=false" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
         with:

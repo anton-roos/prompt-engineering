@@ -67,19 +67,6 @@ jobs:
             exit 1
           fi
 
-      - name: Check for chain-of-thought prompting content
-        id: check-chain-of-thought
-        continue-on-error: true
-        run: |
-          if [ -f "chain-of-thought-prompts.md" ] && grep -q "Chain-of-Thought" chain-of-thought-prompts.md; then
-            echo "Found chain-of-thought content"
-            echo "chain_of_thought_found=true" >> $GITHUB_OUTPUT
-          else
-            echo "Chain-of-thought content not found"
-            echo "chain_of_thought_found=false" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
         with:

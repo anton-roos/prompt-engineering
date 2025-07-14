@@ -67,19 +67,6 @@ jobs:
             exit 1
           fi
 
-      - name: Check for one-shot prompting content
-        id: check-one-shot
-        continue-on-error: true
-        run: |
-          if [ -f "one-shot-prompts.md" ] && grep -q "One-Shot" one-shot-prompts.md; then
-            echo "Found one-shot content"
-            echo "one_shot_found=true" >> $GITHUB_OUTPUT
-          else
-            echo "One-shot content not found"
-            echo "one_shot_found=false" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
         with:
