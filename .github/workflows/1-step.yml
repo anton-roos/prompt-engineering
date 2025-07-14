@@ -2,8 +2,8 @@ name: Step 1
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - "my-prompts.md"
 
 permissions:
   contents: read
