@@ -3,7 +3,7 @@ name: Step 4
 on:
   push:
     paths:
-      - "few-shot-prompts.md"
+      - "few-shot-prompts.yml"
 
 permissions:
   contents: write
@@ -54,11 +54,11 @@ jobs:
           file: ai-skills/templates/checking-work.md
           edit-mode: replace
 
-      - name: Check if few-shot-prompts.md file exists
+      - name: Check if few-shot-prompts.yml file exists
         id: check-file-exists
         continue-on-error: true
         run: |
-          if [ -f "few-shot-prompts.md" ]; then
+          if [ -f "few-shot-prompts.yml" ]; then
             echo "File exists"
             echo "file_exists=true" >> $GITHUB_OUTPUT
           else

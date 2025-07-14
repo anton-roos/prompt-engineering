@@ -3,7 +3,7 @@ name: Step 1
 on:
   push:
     paths:
-      - "my-prompts.md"
+      - "my-prompts.yml"
 
 permissions:
   contents: read
@@ -24,15 +24,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Check if my-prompts.md exists and has content
+      - name: Check if my-prompts.yml exists and has content
         id: check-file
         run: |
-          if [ -f "my-prompts.md" ] && [ -s "my-prompts.md" ]; then
+          if [ -f "my-prompts.yml" ] && [ -s "my-prompts.yml" ]; then
             echo "file_exists=true" >> $GITHUB_OUTPUT
-            echo "✅ Found my-prompts.md with content"
+            echo "✅ Found my-prompts.yml with content"
           else
             echo "file_exists=false" >> $GITHUB_OUTPUT
-            echo "❌ my-prompts.md not found or empty"
+            echo "❌ my-prompts.yml not found or empty"
           fi
 
   find_exercise:

@@ -20,31 +20,25 @@ Great job setting up your workspace! Now you'll learn to write effective prompts
 1. Add a file for your Zero-shot prompts using the terminal.
 
 ```bash
-touch zero-shot-prompts.md
+touch zero-shot-prompts.yml
 ```
 
 2. **Add these zero-shot prompt templates**:
    
-   ```markdown
-   ## Zero-Shot Prompt Practice
+   ```yaml
+   # Zero-Shot Prompt Practice
    
-   ### Email Writing Prompt
-   **Prompt:** Write a professional email to stakeholders explaining a 2-week delay in the WhatsApp integration project. Include an apology, brief explanation of technical challenges, revised timeline, and next steps. Keep the tone professional but reassuring.
+   email_writing:
+     prompt: "Write a professional email to stakeholders explaining a 2-week delay in the WhatsApp integration project. Include an apology, brief explanation of technical challenges, revised timeline, and next steps. Keep the tone professional but reassuring."
+     ai_response: "[Test this prompt and paste the response here]"
    
-   **AI Response:**
-   [Test this prompt and paste the response here]
+   meeting_summary:
+     prompt: "Create a concise meeting summary with the following structure: Key Decisions, Action Items (with owners and deadlines), and Next Meeting Date. Write it for a project status meeting about implementing WhatsApp customer service capabilities."
+     ai_response: "[Test this prompt and paste the response here]"
    
-   ### Meeting Summary Prompt  
-   **Prompt:** Create a concise meeting summary with the following structure: Key Decisions, Action Items (with owners and deadlines), and Next Meeting Date. Write it for a project status meeting about implementing WhatsApp customer service capabilities.
-   
-   **AI Response:**
-   [Test this prompt and paste the response here]
-   
-   ### Technical Documentation Prompt
-   **Prompt:** Write a brief technical requirements document for integrating WhatsApp Business API into an existing customer service system. Include sections for: Overview, Technical Requirements, Integration Points, and Success Criteria. Use bullet points and keep it under 300 words.
-   
-   **AI Response:**
-   [Test this prompt and paste the response here]
+   technical_documentation:
+     prompt: "Write a brief technical requirements document for integrating WhatsApp Business API into an existing customer service system. Include sections for: Overview, Technical Requirements, Integration Points, and Success Criteria. Use bullet points and keep it under 300 words."
+     ai_response: "[Test this prompt and paste the response here]"
    ```
 
 3. **Test each prompt** with GitHub Copilot, M365 Copilot, or your preferred AI tool

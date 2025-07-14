@@ -3,7 +3,7 @@ name: Step 6
 on:
   push:
     paths:
-      - "advanced-prompting-exercises.md"
+      - "advanced-prompting-exercises.yml"
 
 permissions:
   contents: write
@@ -58,7 +58,7 @@ jobs:
         id: check-file-exists
         continue-on-error: true
         run: |
-          if [ -f "advanced-prompting-exercises.md" ]; then
+          if [ -f "advanced-prompting-exercises.yml" ]; then
             echo "File exists"
             echo "file_exists=true" >> $GITHUB_OUTPUT
           else

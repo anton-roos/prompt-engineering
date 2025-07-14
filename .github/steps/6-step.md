@@ -23,8 +23,30 @@ This step is reserved for your special advanced content. Here are some ideas for
 
 ### ⌨️ Activity: (Your Special Activity)
 
-1. (Your first special instruction)
-2. (Your second special instruction)
+1. **Create your advanced prompts workspace**:
+
+```bash
+touch advanced-prompting-exercises.yml
+```
+
+2. **Add your special prompting content**:
+   
+   ```yaml
+   # Advanced Prompting Exercises
+   
+   special_technique_1:
+     prompt: "(Your first special prompt)"
+     ai_response: "[Response area]"
+   
+   special_technique_2:
+     prompt: "(Your second special prompt)"  
+     ai_response: "[Response area]"
+   
+   capstone_challenge:
+     prompt: "(Your extraordinary final challenge)"
+     ai_response: "[Response area]"
+   ```
+
 3. (Continue with your unique challenge)
 
 <details>

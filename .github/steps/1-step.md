@@ -31,24 +31,20 @@ click Allow
    - Ensure your terminal is open. If terminal is not open press `CTRL + ~`
    - Copy the following into the terminal
 ```bash
-touch my-prompts.md
+touch my-prompts.yml
 ```
    - Press Enter
 
 4. **Write your first prompt**:
    
-   In your `my-prompts.md` file, add this content to practice prompt engineering:
+   In your `my-prompts.yml` file, add this content to practice prompt engineering:
    
-   ```markdown
+   ```yaml
    # My Prompt Engineering Collection
    
-   ## Zero-Shot Prompt Example
-   
-   **Prompt:**
-   Write a professional email to a stakeholder explaining that you need more information for the new WhatsApp project to do a thorough requirement analysis.
-   
-   **AI Response:**
-   [Paste the AI's response here when you test this prompt]
+   zero_shot_example:
+     prompt: "Write a professional email to a stakeholder explaining that you need more information for the new WhatsApp project to do a thorough requirement analysis."
+     ai_response: "[Paste the AI's response here when you test this prompt]"
    ```
    **Practice Activity:** 
    - Test these prompts with GitHub Copilot or M365 Copilot
