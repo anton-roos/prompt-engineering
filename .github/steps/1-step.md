@@ -42,7 +42,7 @@ In this step, you'll learn to set up a codespace to start crafting and testing e
    ## Zero-Shot Prompt Example
    
    **Prompt:**
-   Write a professional email to a client explaining that you need more information for the new WhatsApp project to do a thorough requirement analysis.
+   Write a professional email to a stakeholder explaining that you need more information for the new WhatsApp project to do a thorough requirement analysis.
    
    **AI Response:**
    [Paste the AI's response here when you test this prompt]
