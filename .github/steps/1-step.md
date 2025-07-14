@@ -30,11 +30,9 @@ click Allow
 3. **Create a new prompt document**:
    - Ensure your terminal is open. If terminal is not open press `CTRL + ~`
    - Copy the following into the terminal
-   
-   ```bash
-   touch my-prompts.md
-   ```
-
+```bash
+touch my-prompts.md
+```
    - Press Enter
 
 4. **Write your first prompt**:
