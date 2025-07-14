@@ -20,8 +20,8 @@ jobs:
     name: Start Exercise
     uses: anton-roos/ai-skills/.github/workflows/start-exercise.yml@main
     with:
-      exercise-title: "Business Analysis with MCP and AI"
-      intro-message: 🎯 **Welcome to Hollard's Business Analysis Training!**
+      exercise-title: "Prompt Engineering with AI"
+      intro-message: 🎯 **Welcome to Prompt Engineering Training!** Learn how to craft effective prompts using GitHub Actions - no developer experience required!
 
   post_next_step_content:
     name: Post next step content
@@ -41,28 +41,41 @@ jobs:
           path: exercise-toolkit
           ref: v0.7.0
 
-      - name: Build comment - add step content
-        id: build-comment
+      - name: Create comment - add step content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          issue-number: ${{ needs.start-exercise.outputs.issue-number }}
+          repository: ${{ github.repository }}
+          file: ${{ env.STEP_1_FILE }}
+
+      - name: Create comment - watching for progress
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          issue-number: ${{ needs.start-exercise.outputs.issue-number }}
+          repository: ${{ github.repository }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+
+      - name: Update README with exercise started template
         uses: skills/action-text-variables@v3
+        id: update-readme
         with:
           template-file: ${{ env.STEP_1_FILE }}
           template-vars: |
-            full_repo_name: ${{ github.repository }}
+            title: Prompt Engineering with AI
+            login: ${{ github.actor }}
+            issue_url: ${{ needs.start-exercise.outputs.issue-url }}
+            intro_message: Learn to craft effective prompts using GitHub Actions - no developer experience required!
 
-      - name: Create comment - add step content
+      - name: Commit README update
         run: |
-          gh issue comment "$ISSUE_URL" \
-            --body "$ISSUE_BODY"
+          echo "$README_CONTENT" > README.md
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update README with exercise start information" || echo "No changes to commit"
+          git push
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_BODY: ${{ steps.build-comment.outputs.updated-text }}
-
-      - name: Create comment - watching for progress
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          README_CONTENT: ${{ steps.update-readme.outputs.updated-text }}
 
       - name: Disable current workflow and enable next one
         run: |
