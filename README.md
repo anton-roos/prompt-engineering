@@ -1,46 +1,41 @@
 # Introduction to Prompt Engineering
 
-This course teaches you how to craft effective prompts using simple GitHub Actions, no developer experience required.
+This course teaches you how to craft effective prompts, no developer experience required.
 
-## Overview of Workflows
+## 🚀 Getting Started
 
-1. **Initialize Template**
-   - Go to the **Actions** tab in this repository.
-   - Select **Initialize Prompts Document** and click **Run workflow**.
-   - A `prompts.md` file will be created with three sections: Zero-Shot, Few-Shot, and Chain-of-Thought.
+**The exercise is currently initializing...** ⏳
 
-2. **Fill In Your Prompts**
-   - Open the newly created `prompts.md` file.
-   - Add your own prompts under each heading and paste the AI responses.
-   - Commit your changes to a new branch and open a Pull Request (PR) to `main`.
+When you first visit this repository, GitHub Actions is automatically setting up your personalized learning environment. This process takes about 20-30 seconds.
 
-3. **Validation on Pull Request**
-   - The **Validate Prompts** workflow will automatically run.
-   - It checks for the three required sections and leaves feedback in the PR.
-   - If sections are missing, update your file and push again.
+**Please refresh this page every few seconds until you see:**
+- A "**Go to Exercise**" button 
+- A "**Go to Codespace**" button
 
-4. **Celebrate Completion**
-   - Once your PR is merged, the **Celebrate Completion** workflow posts a congratulatory comment.
+Once these buttons appear, open "**Go to Exercise** and **Go to Codespace**" in new tabs to begin your prompt engineering journey!
 
 ---
 
-## How to Get Started
+## 📚 What You'll Learn (Once Exercise Starts)
 
-1. Navigate to the **Actions** tab.
-2. Run **Initialize Prompts Document**.
-3. Wait for completion and then refresh this page.
+This hands-on course covers:
 
-## Best Practices
+- **Zero-shot prompting**: Direct instructions without examples
+- **Few-shot prompting**: Learning from examples  
+- **Chain-of-thought reasoning**: Step-by-step problem solving
+- **Prompt optimization**: Iterating and improving your prompts
+- **Best practices**: Professional prompt engineering techniques
 
-- Write clear, concise instructions.
-- Provide examples in the Few-Shot section to guide the AI.
-- Use step-by-step reasoning in the Chain-of-Thought section.
-- Iterate: test prompts, refine, and commit improvements.
+## 🔄 If You Don't See Exercise Buttons
 
-## Next Steps
+If this page still shows initialization content after 60 seconds:
 
-- Explore advanced prompt patterns.
-- Integrate prompts into real projects.
-- Share feedback by opening an issue in this repository.
+1. **Refresh the page** (Ctrl+F5 or Cmd+Shift+R)
+2. **Check the Actions tab** to see if workflows are running
+3. **Wait another minute** and refresh again
 
-© 2025 Prompt Engineering Course
+The exercise will automatically start once the initialization workflow completes.
+
+---
+
+&copy; Copyright 2025 Hollard &bull; [Privacy](https://www.hollard.co.za/our-world/company-overview/hollard-privacy) &bull; [Legal Requirements](https://www.hollard.co.za/our-world/company-overview/legal-requirements) &bull; [MIT License](https://gh.io/mit)
