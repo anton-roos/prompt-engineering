@@ -20,8 +20,8 @@ jobs:
     name: Start Exercise
     uses: anton-roos/ai-skills/.github/workflows/start-exercise.yml@main
     with:
-      exercise-title: "Prompt Engineering with AI"
-      intro-message: 🎯 **Welcome to Prompt Engineering Training!** Learn how to craft effective prompts using GitHub Actions - no developer experience required!
+      exercise-title: "Prompt Engineering"
+      intro-message: 🎯 **Prompt Engineering Training!** Learn how to craft effective prompts - no developer experience required!
 
   post_next_step_content:
     name: Post next step content
