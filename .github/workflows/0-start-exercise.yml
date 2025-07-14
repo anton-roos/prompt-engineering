@@ -37,9 +37,9 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
-          path: exercise-toolkit
-          ref: v0.7.0
+          repository: anton-roos/ai-skills
+          path: ai-skills
+          ref: main
 
       - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1
@@ -53,7 +53,7 @@ jobs:
         with:
           issue-number: ${{ needs.start-exercise.outputs.issue-number }}
           repository: ${{ github.repository }}
-          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+          file: ai-skills/templates/watching-for-progress.md
 
       - name: Update README with exercise started template
         uses: skills/action-text-variables@v3
