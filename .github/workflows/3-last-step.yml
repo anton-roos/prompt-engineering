@@ -1,7 +1,6 @@
-name: Step 3 # Last step of the exercise
+name: Step 3
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -17,7 +16,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+    uses: anton-roos/ai-skills/.github/workflows/find-exercise-issue.yml@main
 
   post_review_content:
     name: Post review content
@@ -34,16 +33,16 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
-          path: exercise-toolkit
-          ref: v0.7.0
+          repository: anton-roos/ai-skills
+          path: ai-skills
+          ref: main
 
       - name: Create comment - step finished - final review next
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+          file: ai-skills/templates/lesson-review.md
 
       - name: Create comment - add review content
         uses: GrantBirki/comment@v2.1.1
@@ -60,7 +59,7 @@ jobs:
   finish_exercise:
     name: Finish Exercise
     needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.0
+    uses: anton-roos/ai-skills/.github/workflows/finish-exercise.yml@main
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
       exercise-title: "(replace-me: Exercise title)"

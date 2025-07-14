@@ -1,7 +1,6 @@
 name: Step 1
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -40,7 +39,7 @@ jobs:
     name: Find Exercise Issue
     needs: [check_step_completion]
     if: needs.check_step_completion.outputs.step_completed == 'true'
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+    uses: anton-roos/ai-skills/.github/workflows/find-exercise-issue.yml@main
 
   post_next_step_content:
     name: Post next step content
@@ -58,16 +57,16 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
-          path: exercise-toolkit
-          ref: v0.7.0
+          repository: anton-roos/ai-skills
+          path: ai-skills
+          ref: main
 
       - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          file: ai-skills/templates/step-finished-prepare-next-step.md
           vars: |
             next_step_number: 2
           
@@ -83,7 +82,7 @@ jobs:
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+          file: ai-skills/templates/watching-for-progress.md
 
       - name: Disable current workflow and enable next one
         run: |
