@@ -67,22 +67,6 @@ jobs:
             exit 1
           fi
 
-      - name: Update comment - step results
-        uses: GrantBirki/comment@v2.1.1
-        with:
-          repository: ${{ env.ISSUE_REPOSITORY }}
-          issue-number: ${{ env.ISSUE_NUMBER }}
-          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
-          edit-mode: replace
-          file: ai-skills/templates/step-results-table.md
-          vars: |
-            step_number: 4
-            results_table:
-              - description: "Created few-shot-prompts.md file"
-                passed: ${{ steps.check-file-exists.outcome == 'success' }}
-              - description: "Found few-shot prompting examples"
-                passed: ${{ steps.check-few-shot.outcome == 'success' }}
-
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
