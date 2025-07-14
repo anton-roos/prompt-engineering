@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 env:
-  STEP_7_FILE: ".github/steps/7-step.md"
+  STEP_7_FILE: ".github/steps/7-last-step.md"
 
 jobs:
   find_exercise:
