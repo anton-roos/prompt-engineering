@@ -71,9 +71,14 @@ jobs:
           echo "$README_CONTENT" > README.md
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull origin main --rebase || true
           git add README.md
-          git commit -m "Update README with exercise start information" || echo "No changes to commit"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update README with exercise start information"
+            git push origin main
+          fi
         env:
           README_CONTENT: ${{ steps.update-readme.outputs.updated-text }}
 
