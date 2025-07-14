@@ -3,7 +3,7 @@ name: Step 2
 on:
   push:
     branches:
-      - tst
+      - test
 
 permissions:
   contents: write
@@ -54,12 +54,33 @@ jobs:
           file: ai-skills/templates/checking-work.md
           edit-mode: replace
 
-      - name: Check if README file exists
+      # Fixed: Use a regular step instead of reusable workflow
+      - name: Check if my-prompts.md file exists
         id: check-file-exists
         continue-on-error: true
-        uses: anton-roos/ai-skills/.github/workflows/file-exists.yml@main
-        with:
-          file: README.md
+        run: |
+          if [ -f "my-prompts.md" ]; then
+            echo "File exists"
+            echo "file_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "File does not exist"
+            echo "file_exists=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      # Added: Check for prompt engineering content
+      - name: Check for zero-shot prompting content
+        id: check-zero-shot
+        continue-on-error: true
+        run: |
+          if grep -q "Zero-Shot" my-prompts.md; then
+            echo "Found zero-shot content"
+            echo "zero_shot_found=true" >> $GITHUB_OUTPUT
+          else
+            echo "Zero-shot content not found"
+            echo "zero_shot_found=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -72,8 +93,10 @@ jobs:
           vars: |
             step_number: 2
             results_table:
-              - description: "Checked if README.md file exists"
-                passed: true
+              - description: "Found my-prompts.md file"
+                passed: ${{ steps.check-file-exists.outcome == 'success' }}
+              - description: "Found zero-shot prompting examples"
+                passed: ${{ steps.check-zero-shot.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
@@ -81,7 +104,7 @@ jobs:
 
   post_next_step_content:
     name: Post next step content
-    needs: [find_exercise] # if check_step_work then "needs: [find_exercise, check_step_work]"
+    needs: [find_exercise, check_step_work]  # Fixed: Added check_step_work dependency
     runs-on: ubuntu-latest
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}
