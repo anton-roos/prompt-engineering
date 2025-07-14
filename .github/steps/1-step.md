@@ -21,18 +21,23 @@ In this step, you'll learn to set up a codespace to start crafting and testing e
 
 1. **Open your codespace** if you have not already opened it up in a new tab, and ensure GitHub Copilot is active (look for the Copilot icon in the status bar)
 
-2. **Create a new prompt document**:
-   - Press `Ctrl+Shift+P` to open the command palette
-   - Type "New File" and select it
-   - Save the file as `my-prompts.md`
+2. Right click anywhere so that the following popup will open in your codespace:
 
-3. **Test GitHub Copilot for prompt creation**:
+3. **Create a new prompt document**:
+   - Ensure your terminal is open. If terminal is not open press `CTRL + ~`
+   - Copy the following into the terminal`
+   ```bash
+   touch my-prompts.md
+   ```
+
+4. **Test GitHub Copilot for prompt creation**:
+   - Find your file on the left file explorer. It should be a green `my-prompts.md` that shows that a new file was created.
    - Start typing: `# My Prompt Engineering Collection`
    - Press `Enter` and begin typing: `## Zero-Shot Prompts`
    - Notice how Copilot suggests relevant content
    - Press tab to accept the suggestion and save the file
 
-4. **Write your first prompt**:
+5. **Write your first prompt**:
    
    In your `my-prompts.md` file, add this content to practice prompt engineering:
    
