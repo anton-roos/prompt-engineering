@@ -1,6 +1,6 @@
-## Step 2: Mastering Zero-Shot Prompting
+## Step 2: Mastering Prompt Techniques
 
-Great job setting up your workspace! Now you'll learn to write effective zero-shot prompts - direct instructions that get AI to perform tasks without examples.
+Great job setting up your workspace! Now you'll learn to write effective prompts using different prompt techniques.
 
 ### 📖 Theory: Zero-Shot Prompting Fundamentals
 
@@ -17,7 +17,11 @@ Great job setting up your workspace! Now you'll learn to write effective zero-sh
 
 ### ⌨️ Activity: Create Professional Zero-Shot Prompts
 
-1. **Open your `my-prompts.md` file** and add a new section for zero-shot practice
+1. Add a file for your Zero-shot prompts using the terminal.
+
+```bash
+touch zero-shot-prompts.md
+```
 
 2. **Add these zero-shot prompt templates**:
    
@@ -53,3 +57,9 @@ Great job setting up your workspace! Now you'll learn to write effective zero-sh
    git commit -m "Added zero-shot prompting practice"
    git push origin main
    ```
+
+### 🎯 Next Step
+
+Excellent work mastering zero-shot prompting! You've learned the foundation of effective AI communication through clear, specific instructions.
+
+**What's Next**: In Step 3, you'll discover how providing a single example can dramatically improve response quality and consistency. One-shot prompting builds on everything you just learned while introducing the power of examples.

@@ -1,9 +1,9 @@
-name: Step 2
+name: Step 5
 
 on:
   push:
-    branches:
-      - test
+    paths:
+      - "chain-of-thought-prompts.md"
 
 permissions:
   contents: write
@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 env:
-  STEP_3_FILE: ".github/steps/3-step.md"
+  STEP_6_FILE: ".github/steps/6-step.md"
 
 jobs:
   find_exercise:
@@ -54,12 +54,11 @@ jobs:
           file: ai-skills/templates/checking-work.md
           edit-mode: replace
 
-      # Fixed: Use a regular step instead of reusable workflow
-      - name: Check if zero-shot-prompts.md file exists
+      - name: Check if chain-of-thought-prompts.md file exists
         id: check-file-exists
         continue-on-error: true
         run: |
-          if [ -f "zero-shot-prompts.md" ]; then
+          if [ -f "chain-of-thought-prompts.md" ]; then
             echo "File exists"
             echo "file_exists=true" >> $GITHUB_OUTPUT
           else
@@ -68,17 +67,16 @@ jobs:
             exit 1
           fi
 
-      # Added: Check for zero-shot prompting content
-      - name: Check for zero-shot prompting content
-        id: check-zero-shot
+      - name: Check for chain-of-thought prompting content
+        id: check-chain-of-thought
         continue-on-error: true
         run: |
-          if [ -f "zero-shot-prompts.md" ] && grep -q "Zero-Shot" zero-shot-prompts.md; then
-            echo "Found zero-shot content"
-            echo "zero_shot_found=true" >> $GITHUB_OUTPUT
+          if [ -f "chain-of-thought-prompts.md" ] && grep -q "Chain-of-Thought" chain-of-thought-prompts.md; then
+            echo "Found chain-of-thought content"
+            echo "chain_of_thought_found=true" >> $GITHUB_OUTPUT
           else
-            echo "Zero-shot content not found"
-            echo "zero_shot_found=false" >> $GITHUB_OUTPUT
+            echo "Chain-of-thought content not found"
+            echo "chain_of_thought_found=false" >> $GITHUB_OUTPUT
             exit 1
           fi
 
@@ -91,12 +89,12 @@ jobs:
           edit-mode: replace
           file: ai-skills/templates/step-results-table.md
           vars: |
-            step_number: 2
+            step_number: 5
             results_table:
-              - description: "Created zero-shot-prompts.md file"
+              - description: "Created chain-of-thought-prompts.md file"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
-              - description: "Found zero-shot prompting examples"
-                passed: ${{ steps.check-zero-shot.outcome == 'success' }}
+              - description: "Found chain-of-thought prompting examples"
+                passed: ${{ steps.check-chain-of-thought.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
@@ -104,7 +102,7 @@ jobs:
 
   post_next_step_content:
     name: Post next step content
-    needs: [find_exercise, check_step_work]  # Fixed: Added check_step_work dependency
+    needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}
@@ -128,25 +126,25 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: ai-skills/templates/step-finished-prepare-next-step.md
           vars: |
-            next_step_number: 3
+            next_step_number: 6
 
       - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ${{ env.STEP_3_FILE }}
+          file: ${{ env.STEP_6_FILE }}
 
       - name: Create comment - watching for progress
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ai-skills/templates/step-feedback/watching-for-progress.md
+          file: ai-skills/templates/watching-for-progress.md
 
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"
-          gh workflow enable "Step 3"
+          gh workflow enable "Step 6"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
