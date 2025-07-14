@@ -66,22 +66,6 @@ jobs:
             issue_url: ${{ needs.start-exercise.outputs.issue-url }}
             intro_message: Learn to craft effective prompts using GitHub Actions - no developer experience required!
 
-      - name: Commit README update
-        run: |
-          echo "$README_CONTENT" > README.md
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git pull origin main --rebase || true
-          git add README.md
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update README with exercise start information"
-            git push origin main
-          fi
-        env:
-          README_CONTENT: ${{ steps.update-readme.outputs.updated-text }}
-
       - name: Enable Step 1 workflow
         run: |
           gh workflow enable "Step 1"
