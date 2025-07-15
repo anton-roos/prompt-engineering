@@ -111,29 +111,29 @@ prompt: |
 ai_response: "[Quality assessment results and recommendations]"
 
 # Workflow Optimization
-prompt_refinement:
-  original_approach: "[Document your initial prompting strategy]"
-  refined_approach: "[Describe improvements made to your prompts]"
-  lessons_learned: "[Key insights about advanced prompting workflows]"
+# Prompt Refinement
+original_approach: "[Document your initial prompting strategy]"
+refined_approach: "[Describe improvements made to your prompts]"
+lessons_learned: "[Key insights about advanced prompting workflows]"
 
-efficiency_analysis:
-  time_saved: "[Estimate time saved vs manual creation]"
-  quality_assessment: "[Compare AI-generated vs traditional methods]"
-  future_applications: "[How you'll apply these techniques in other projects]"
+# Efficiency Analysis
+time_saved: "[Estimate time saved vs manual creation]"
+quality_assessment: "[Compare AI-generated vs traditional methods]"
+future_applications: "[How you'll apply these techniques in other projects]"
 
 # Capstone Challenge
-comprehensive_workflow:
-  prompt: |
-    "Design a complete prompt engineering workflow for creating multilingual technical 
-    documentation. Include prompt templates for:
-    - Initial document structure creation
-    - Technical diagram generation
-    - Content quality validation
-    - Translation management
-    - Final review and approval process
-    Make this reusable for future projects."
-  ai_response: "[Your comprehensive workflow design]"
-  implementation_notes: "[How you would implement this in a real organization]"
+# Comprehensive Workflow
+prompt: |
+  "Design a complete prompt engineering workflow for creating multilingual technical 
+  documentation. Include prompt templates for:
+  - Initial document structure creation
+  - Technical diagram generation
+  - Content quality validation
+  - Translation management
+  - Final review and approval process
+  Make this reusable for future projects."
+ai_response: "[Your comprehensive workflow design]"
+implementation_notes: "[How you would implement this in a real organization]"
 ```
 
 3. **Execution Steps:**
