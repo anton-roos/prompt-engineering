@@ -1,8 +1,8 @@
-## 🎉 Congratulations - You're Now a Prompt Engineer!
+## 🎉 You're Now a Prompt Engineer!
 
 _Congratulations, you've completed this comprehensive prompt engineering exercise and transformed from a beginner into an advanced AI prompt orchestrator!_
 
-<img src="https://octodex.github.com/images/jetpacktocat.png" alt="celebrate" width=200 align=right>
+<img src="https://octodex.github.com/images/welcometocat.png" alt="celebrate" width=200 align=right>
 
 ## 🚀 Your Amazing Accomplishments:
 
@@ -14,6 +14,9 @@ _Congratulations, you've completed this comprehensive prompt engineering exercis
 - ✅ **Implemented Quality Assurance**: Learned to refine and validate AI-generated content
 - ✅ **Created Professional Documentation**: Generated business requirements with technical diagrams
 - ✅ **Mastered Advanced Workflows**: Orchestrated complex multi-step AI assistance processes
+
+
+<img src="https://octodex.github.com/images/jetpacktocat.png" alt="celebrate" width=200 align=right>
 
 ## 🌟 You Are Now Equipped To:
 
@@ -47,3 +50,21 @@ _Congratulations, you've completed this comprehensive prompt engineering exercis
 Your journey from basic prompts to advanced multi-modal, multilingual AI orchestration represents a significant professional skill development. These capabilities will serve you well in our increasingly AI-integrated world.
 
 **Well done, prompt engineering master!** 🎯✨
+
+## 🚀 Share Your Success!
+
+**Show off your new skills and inspire others!**
+
+<a href="https://www.linkedin.com/feed/?shareActive=true&text=I%20have%20just%20completed%20the%20AI%20Engineering%20Course%20on%20GitHub%0A%0Ahttps%3A//git.new/ai-skills%0A%0A%23learn%20%23PromptEngineering%20%23AIForProductivity%20%23Hollard" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Share%20on%20LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Share on LinkedIn" />
+</a>
+
+
+
+*There's no better way to learn than building things!* 🚀
+
+</div>
+
+---
+
+&copy; Copyright 2025 Hollard &bull; [Privacy](https://www.hollard.co.za/our-world/company-overview/hollard-privacy) &bull; [Legal Requirements](https://www.hollard.co.za/our-world/company-overview/legal-requirements) &bull; [MIT License](https://gh.io/mit)
