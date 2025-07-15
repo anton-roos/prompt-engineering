@@ -27,53 +27,51 @@ In this step, you'll learn to set up a codespace to start crafting and testing e
 
 click Allow
 
-3. **Create a new prompt document**:
-   - Ensure your terminal is open. If terminal is not open press `CTRL + ~`
-   - Copy the following into the terminal
+3. **Create a new prompt document**
+- Ensure your terminal is open. If terminal is not open press `CTRL + ~`
+- Copy the following into the terminal
 ```bash
 touch my-prompts.yml
 ```
-   - Press Enter
+- Press Enter
 
 4. **Write your first prompt**:
    
-   In your `my-prompts.yml` file, add this content to practice prompt engineering:
+In your `my-prompts.yml` file, add this content to practice prompt engineering:
    
-   ```yaml
-   # My Prompt Engineering Collection
+```yaml
+prompt: "Write a professional email to a stakeholder explaining that you need more information for the new WhatsApp project to do a thorough requirement analysis."
+ai_response: "[Paste the AI's response here when you test this prompt]"
+```
    
-   zero_shot_example:
-     prompt: "Write a professional email to a stakeholder explaining that you need more information for the new WhatsApp project to do a thorough requirement analysis."
-     ai_response: "[Paste the AI's response here when you test this prompt]"
-   ```
-   **Practice Activity:** 
-   - Test these prompts with GitHub Copilot or M365 Copilot
-   - Copy the AI responses and paste them in the designated areas
+**Practice Activity:** 
+- Test these prompts with GitHub Copilot or M365 Copilot
+- Copy the AI responses and paste them in the designated areas
 
 5. **Commit and push your workspace setup**:
    
    Now let's save your progress to GitHub. Copy and paste these commands one by one:
    
-   ```bash
-   git add .
-   ```
-   
-   ```bash
-   git commit -m "Set up prompt engineering workspace structure"
-   ```
-   
-   ```bash
-   git push origin main
-   ```
+```bash
+git add .
+```
+
+```bash
+git commit -m "Set up prompt engineering workspace structure"
+```
+
+```bash
+git push origin main
+```
    
 > [!NOTE]
 > In professional environments, it's recommended to create feature branches and use pull requests instead of pushing directly to the main branch. However, for this learning exercise, pushing directly to main is perfectly fine!
    
-   **What these commands do:**
-   - `git add .` - Stages all your new files for commit
-   - `git commit -m "message"` - Creates a snapshot of your changes with a descriptive message
-   - `git push origin main` - Uploads your changes to GitHub on the main branch
-   
-   ✅ **Success!** Your workspace is now saved to GitHub and ready for prompt engineering practice!
+**What these commands do:**
+- `git add .` - Stages all your new files for commit
+- `git commit -m "message"` - Creates a snapshot of your changes with a descriptive message
+- `git push origin main` - Uploads your changes to GitHub on the main branch
 
-   If everything went well. Mona will give you your next task.
+✅ **Success!** Your workspace is now saved to GitHub and ready for prompt engineering practice!
+
+If everything went well. Mona will give you your next task.

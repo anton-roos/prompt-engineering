@@ -30,101 +30,100 @@ touch one-shot-prompts.yml
 
 2. **Add these one-shot prompt templates**:
    
-   ```yaml
-   # One-Shot Prompt Practice
-   
-   code_review_comment:
-     prompt: |
-       Write a constructive code review comment for a pull request. Here's an example:
-       
-       Example: "Great work on implementing the user authentication! I noticed the password validation could be strengthened by adding a check for special characters. Consider using a regex pattern like /^(?=.*[!@#$%^&*])/ to ensure at least one special character. This would align with our security standards. Otherwise, the logic flow looks solid!"
-       
-       Now write a similar code review comment for a WhatsApp integration module that has good error handling but lacks proper logging.
-     ai_response: "[Test this prompt and paste the response here]"
-   
-   user_story_writing:
-     prompt: |
-       Write a user story following this format:
-       
-       Example: "As a customer service manager, I want to view real-time chat metrics on a dashboard so that I can monitor team performance and identify bottlenecks during peak hours. Acceptance criteria: Dashboard updates every 30 seconds, shows active chats, average response time, and agent availability."
-       
-       Now write a user story for a customer who wants to receive automated WhatsApp notifications about their order status.
-     ai_response: "[Test this prompt and paste the response here]"
-   
-   bug_report:
-     prompt: |
-       Write a detailed bug report using this structure:
-       
-       Example: "**Title:** Login form validation fails with special characters
-       **Environment:** Chrome 120, Windows 11, Production
-       **Steps to Reproduce:** 1) Navigate to login page 2) Enter email with + symbol 3) Click submit
-       **Expected Result:** User should be logged in successfully
-       **Actual Result:** Error message 'Invalid email format' appears
-       **Priority:** Medium - affects users with email aliases"
-       
-       Now write a bug report for WhatsApp messages not being delivered during peak hours.
-     ai_response: "[Test this prompt and paste the response here]"
-   
-   status_update_email:
-     prompt: |
-       Write a project status update email following this example:
-       
-       Example: "Subject: Weekly Update - Mobile App Redesign Project
-       
-       Hi Team,
-       
-       Here's our progress update for Week 12:
-       
-       ✅ **Completed:** User interface mockups for login and dashboard screens
-       ✅ **In Progress:** Backend API integration (60% complete)
-       ⚠️ **Blocked:** Waiting for design approval on payment flow
-       📅 **Next Week:** Complete API integration, begin user testing preparation
-       
-       Risk: Design approval delay may push testing back 3 days. Mitigation: Parallel work on other screens.
-       
-       Questions or concerns? Let's discuss in our Friday standup.
-       
-       Best regards,
-       Sarah"
-       
-       Now write a status update email for the WhatsApp integration project covering week 8 of development.
-     ai_response: "[Test this prompt and paste the response here]"
-   ```
+```yaml
+# One-Shot Prompt Practice
+# Code Review Comment
+prompt: |
+  Write a constructive code review comment for a pull request. Here's an example:
+  
+  Example: "Great work on implementing the user authentication! I noticed the password validation could be strengthened by adding a check for special characters. Consider using a regex pattern like /^(?=.*[!@#$%^&*])/ to ensure at least one special character. This would align with our security standards. Otherwise, the logic flow looks solid!"
+  
+  Now write a similar code review comment for a WhatsApp integration module that has good error handling but lacks proper logging.
+ai_response: "[Test this prompt and paste the response here]"
+
+# User Story Writing
+prompt: |
+  Write a user story following this format:
+  
+  Example: "As a customer service manager, I want to view real-time chat metrics on a dashboard so that I can monitor team performance and identify bottlenecks during peak hours. Acceptance criteria: Dashboard updates every 30 seconds, shows active chats, average response time, and agent availability."
+  
+  Now write a user story for a customer who wants to receive automated WhatsApp notifications about their order status.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Bug Report
+prompt: |
+  Write a detailed bug report using this structure:
+  
+  Example: "**Title:** Login form validation fails with special characters
+  **Environment:** Chrome 120, Windows 11, Production
+  **Steps to Reproduce:** 1) Navigate to login page 2) Enter email with + symbol 3) Click submit
+  **Expected Result:** User should be logged in successfully
+  **Actual Result:** Error message 'Invalid email format' appears
+  **Priority:** Medium - affects users with email aliases"
+  
+  Now write a bug report for WhatsApp messages not being delivered during peak hours.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Status Update Email
+prompt: |
+  Write a project status update email following this example:
+  
+  Example: "Subject: Weekly Update - Mobile App Redesign Project
+  
+  Hi Team,
+  
+  Here's our progress update for Week 12:
+  
+  ✅ **Completed:** User interface mockups for login and dashboard screens
+  ✅ **In Progress:** Backend API integration (60% complete)
+  ⚠️ **Blocked:** Waiting for design approval on payment flow
+  📅 **Next Week:** Complete API integration, begin user testing preparation
+  
+  Risk: Design approval delay may push testing back 3 days. Mitigation: Parallel work on other screens.
+  
+  Questions or concerns? Let's discuss in our Friday standup.
+  
+  Best regards,
+  Sarah"
+  
+  Now write a status update email for the WhatsApp integration project covering week 8 of development.
+ai_response: "[Test this prompt and paste the response here]"
+```
 
 3. **Test each prompt** with your preferred AI tool and compare the results to your zero-shot attempts
 
 4. **Analyze the improvements** - Notice how examples improve:
-   - **Consistency**: Similar structure and tone across responses
-   - **Completeness**: All required elements included
-   - **Quality**: More professional and polished output
-   - **Relevance**: Better alignment with your specific needs
+- **Consistency**: Similar structure and tone across responses
+- **Completeness**: All required elements included
+- **Quality**: More professional and polished output
+- **Relevance**: Better alignment with your specific needs
 
 5. **Experiment with variations**:
-   - Try different example styles (formal vs. casual)
-   - Use examples from different domains 
-   - Test with incomplete examples to see what happens
+- Try different example styles (formal vs. casual)
+- Use examples from different domains 
+- Test with incomplete examples to see what happens
 
 6. **Document your observations**:
-   ```yaml
-   # One-Shot vs Zero-Shot Comparison
-   
-   observations:
-     response_quality_differences: "[Add your observations about response quality differences]"
-     pattern_influence: "[Note any patterns in how examples influenced outputs]"
-     task_benefits: "[Record which types of tasks benefited most from examples]"
-   
-   best_practices:
-     effective_examples: "[Your insights about crafting effective examples]"
-     choosing_examples: "[Tips for choosing representative examples]"
-     when_to_use: "[When one-shot works better than zero-shot]"
-   ```
+```yaml
+# One-Shot vs Zero-Shot Comparison
+
+# Observations
+response_quality_differences: "[Add your observations about response quality differences]"
+pattern_influence: "[Note any patterns in how examples influenced outputs]"
+task_benefits: "[Record which types of tasks benefited most from examples]"
+
+best_practices:
+effective_examples: "[Your insights about crafting effective examples]"
+choosing_examples: "[Tips for choosing representative examples]"
+when_to_use: "[When one-shot works better than zero-shot]"
+```
 
 7. **Commit your one-shot mastery**:
-   ```bash
-   git add .
-   git commit -m "Mastered one-shot prompting with examples"
-   git push origin main
-   ```
+```bash
+git add .
+git commit -m "Mastered one-shot prompting with examples"
+git push origin main
+```
 
 ### 🎯 Key Insights
 
