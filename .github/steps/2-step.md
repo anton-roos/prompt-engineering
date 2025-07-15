@@ -37,7 +37,7 @@ ai_response: "[Test this prompt and paste the response here]"
 
 # Technical Documentation:
 prompt: "Write a brief technical requirements document for integrating WhatsApp Business API into an existing customer service system. Include sections for: Overview, Technical Requirements, Integration Points, and Success Criteria. Use bullet points and keep it under 300 words."
-  ai_response: "[Test this prompt and paste the response here]"
+ai_response: "[Test this prompt and paste the response here]"
 ```
 
 3. **Test each prompt** with GitHub Copilot, M365 Copilot, or your preferred AI tool
